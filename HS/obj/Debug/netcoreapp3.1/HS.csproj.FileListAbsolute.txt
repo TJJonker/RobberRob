@@ -11,3 +11,16 @@ E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.dll
 E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.pdb
 E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.genruntimeconfig.cache
 E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.csprojAssemblyReference.cache
+C:\Users\Tom\Desktop\RobberRob\HS\bin\Debug\netcoreapp3.1\HS.exe
+C:\Users\Tom\Desktop\RobberRob\HS\bin\Debug\netcoreapp3.1\HS.deps.json
+C:\Users\Tom\Desktop\RobberRob\HS\bin\Debug\netcoreapp3.1\HS.runtimeconfig.json
+C:\Users\Tom\Desktop\RobberRob\HS\bin\Debug\netcoreapp3.1\HS.runtimeconfig.dev.json
+C:\Users\Tom\Desktop\RobberRob\HS\bin\Debug\netcoreapp3.1\HS.dll
+C:\Users\Tom\Desktop\RobberRob\HS\bin\Debug\netcoreapp3.1\HS.pdb
+C:\Users\Tom\Desktop\RobberRob\HS\obj\Debug\netcoreapp3.1\HS.csprojAssemblyReference.cache
+C:\Users\Tom\Desktop\RobberRob\HS\obj\Debug\netcoreapp3.1\HS.AssemblyInfoInputs.cache
+C:\Users\Tom\Desktop\RobberRob\HS\obj\Debug\netcoreapp3.1\HS.AssemblyInfo.cs
+C:\Users\Tom\Desktop\RobberRob\HS\obj\Debug\netcoreapp3.1\HS.csproj.CoreCompileInputs.cache
+C:\Users\Tom\Desktop\RobberRob\HS\obj\Debug\netcoreapp3.1\HS.dll
+C:\Users\Tom\Desktop\RobberRob\HS\obj\Debug\netcoreapp3.1\HS.pdb
+C:\Users\Tom\Desktop\RobberRob\HS\obj\Debug\netcoreapp3.1\HS.genruntimeconfig.cache

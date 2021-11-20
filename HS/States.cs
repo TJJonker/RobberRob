@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace HS
 {
@@ -8,19 +7,6 @@ namespace HS
         protected StateManager sm;
 
         protected string stateMessage;
-        private string inputMessage;
-
-        protected const string getRich = "get rich";
-        protected const string spotCop = "spot cop";
-        protected const string getTired = "get tired";
-        protected const string feelSafe = "feel safe";
-        protected const string getCaught = "get caught";
-        protected const string escape = "escape";
-        protected const string rebel = "rebel";
-        protected const string getOverpowered = "get overpowered";
-        protected const string feelScared = "feel scared";
-
-        protected Dictionary<string, BaseState> triggers;
 
         public BaseState() => sm = StateManager.current;
 
@@ -29,41 +15,16 @@ namespace HS
         /// </summary>
         public void EnterState() 
         {
-            if(triggers == null)
-            {
-                triggers = new Dictionary<string, BaseState>();
-                SetInputOptions();
-                SetInputMessage();
-            }
-            SetStateMessage();            
-            WelcomeMessage();
-
+            SetStateMessage();
         }
 
         /// <summary>
         /// Behaviour of the state
         /// </summary>
         public void ExecuteState()
-        {            
-            Console.Write("> ");
-            var input = Console.ReadLine().ToLower();
-            HandleInput(input);
-        }
-
-        /// <summary>
-        /// Checks and changes state based on the given input
-        /// </summary>
-        /// <param name="input"> The input in a lower-cased string </param>
-        private void HandleInput(string input) 
         {
-            BaseState output;
-            triggers.TryGetValue(input, out output);
-            if (output != null) StateManager.current.ChangeState(output);
-            else
-            {
-                Console.WriteLine("Not a valid input.");
-                ExecuteState();
-            }
+            StateEffect();
+            WelcomeMessage();
         }
         
         /// <summary>
@@ -73,37 +34,18 @@ namespace HS
         {
             Console.WriteLine("=======================================");
             Console.WriteLine(stateMessage);
-            Console.WriteLine(inputMessage);
+            Console.WriteLine($"Wealth: {sm.wealth}, DistanceToCop: {sm.distanceToCop}, Strength: {sm.strength}");
         }
-
-        /// <summary>
-        /// Creates a string with the input options based on the input dictionary
-        /// </summary>
-        private void SetInputMessage()
-        {
-            inputMessage = "Input options are: ";
-            foreach (KeyValuePair<string, BaseState> entry in triggers)
-                inputMessage += entry.Key + ", ";
-        }
-
-        /// <summary>
-        /// Used to add a string and BaseState pair to the input dictionary
-        /// </summary>
-        /// <param name="key"> string which will be compared to the input string </param>
-        /// <param name="value"> State to swtich to when input is the same as the key </param>
-        protected void AddToInputOptions(string key, BaseState value)
-            => triggers.Add(key, value);
 
         /// <summary>
         /// Used to set the state message
         /// </summary>
-        protected virtual void SetStateMessage() { }
+        protected virtual void SetStateMessage() { }      
 
         /// <summary>
-        /// Used to set the input options  
+        /// Used to set the effect of the state
         /// </summary>
-        protected virtual void SetInputOptions() { }        
-
+        protected virtual void StateEffect() { }
     }
 
     class RobbingBankState : BaseState
@@ -113,12 +55,12 @@ namespace HS
             stateMessage = "I'm robbing banks and getting loads of money! Pew pew!";
         }
 
-        protected override void SetInputOptions()
+        protected override void StateEffect()
         {
-            AddToInputOptions(getRich, sm.havingGoodTimeState);
-            AddToInputOptions(spotCop, sm.fleeingState);
+            sm.strength -= sm.random.Next(1, 3);
+            sm.wealth += sm.random.Next(6, 10);
+            sm.distanceToCop = sm.random.Next(0, 2);
         }
-
     }
 
     class HavingGoodTimeState : BaseState
@@ -128,10 +70,11 @@ namespace HS
             stateMessage = "I'm rich enough to have a good time";
         }
 
-        protected override void SetInputOptions()
+        protected override void StateEffect()
         {
-            AddToInputOptions(getTired, sm.layingLowState);
-            AddToInputOptions(spotCop, sm.fleeingState);
+            sm.strength -= sm.random.Next(1, 3);
+            sm.wealth -= sm.random.Next(1, 3);
+            sm.distanceToCop = sm.random.Next(0, 2);
         }
     }
 
@@ -142,11 +85,10 @@ namespace HS
             stateMessage = "I see a cop, so I have to start running";
         }
 
-        protected override void SetInputOptions()
+        protected override void StateEffect()
         {
-            AddToInputOptions(feelSafe, sm.robbingBankState);
-            AddToInputOptions(getTired, sm.layingLowState);
-            AddToInputOptions(getCaught, sm.imprisonedState);
+            sm.strength -= sm.random.Next(1, 3);
+            sm.wealth -= sm.random.Next(1, 3);
         }
     }
 
@@ -157,9 +99,9 @@ namespace HS
             stateMessage = "I'm getting very tired, so I better lay low for a while";
         }
 
-        protected override void SetInputOptions()
+        protected override void StateEffect()
         {
-            AddToInputOptions(feelSafe, sm.robbingBankState);
+            sm.strength += sm.random.Next(5, 8);
         }
     }
 
@@ -170,10 +112,10 @@ namespace HS
             stateMessage = "They got me, better get out of here soon!";
         }
 
-        protected override void SetInputOptions()
+        protected override void StateEffect()
         {
-            AddToInputOptions(rebel, sm.fightingState);
-            AddToInputOptions(escape, sm.fleeingState);
+            sm.wealth -= sm.random.Next(1, 3);
+            sm.strength += sm.random.Next(2, 5);
         }
     }
 
@@ -184,10 +126,9 @@ namespace HS
             stateMessage = "Haha, they will never get me alive!";
         }
 
-        protected override void SetInputOptions()
+        protected override void StateEffect()
         {
-            AddToInputOptions(feelScared, sm.fleeingState);
-            AddToInputOptions(getOverpowered, sm.imprisonedState);
+            sm.strength -= sm.random.Next(2, 5);
         }
     }
 }
