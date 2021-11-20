@@ -1,0 +1,13 @@
+E:\GD\Jaar 2\Datastructures\HS\HS\bin\Debug\netcoreapp3.1\HS.exe
+E:\GD\Jaar 2\Datastructures\HS\HS\bin\Debug\netcoreapp3.1\HS.deps.json
+E:\GD\Jaar 2\Datastructures\HS\HS\bin\Debug\netcoreapp3.1\HS.runtimeconfig.json
+E:\GD\Jaar 2\Datastructures\HS\HS\bin\Debug\netcoreapp3.1\HS.runtimeconfig.dev.json
+E:\GD\Jaar 2\Datastructures\HS\HS\bin\Debug\netcoreapp3.1\HS.dll
+E:\GD\Jaar 2\Datastructures\HS\HS\bin\Debug\netcoreapp3.1\HS.pdb
+E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.AssemblyInfoInputs.cache
+E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.AssemblyInfo.cs
+E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.csproj.CoreCompileInputs.cache
+E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.dll
+E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.pdb
+E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.genruntimeconfig.cache
+E:\GD\Jaar 2\Datastructures\HS\HS\obj\Debug\netcoreapp3.1\HS.csprojAssemblyReference.cache
