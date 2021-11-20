@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GD\\Jaar 2\\Datastructures\\HS\\HS\\HS.csproj",
+      "projectUniqueName": "C:\\Users\\Tom\\Desktop\\RobberRob\\HS\\HS.csproj",
       "projectName": "HS",
-      "projectPath": "E:\\GD\\Jaar 2\\Datastructures\\HS\\HS\\HS.csproj",
+      "projectPath": "C:\\Users\\Tom\\Desktop\\RobberRob\\HS\\HS.csproj",
       "packagesPath": "C:\\Users\\Tom\\.nuget\\packages\\",
-      "outputPath": "E:\\GD\\Jaar 2\\Datastructures\\HS\\HS\\obj\\",
+      "outputPath": "C:\\Users\\Tom\\Desktop\\RobberRob\\HS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
